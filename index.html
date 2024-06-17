@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+    <meta chearset="UTF-8">
+    <script src="link.js">
+  </head>
+  <body>
+    <noscript>
+      <h1>
+        javascriptが必要です
+      </h1>
+      <p>
+        このWebサイトの動作には、javascriptが必要です。
+        <br>
+        javascriptを有効にしてアクセスをお願いいたします。
+      </p>
+      <small>&copy; 2024 @naochan83275</small>
+    </noscript>
+    <script type="text/javascript">
+      var url = window.location.href;
+      if ( ~url.indexOf('https://naochan83275.github.io/l/#')){
+        var linkid = url.replace('https://naochan83275.github.io/l/#', '');
+        var link = linkid;
+        window.location.href = link;
+      }
+    </script>
+  </body>
+</html>
