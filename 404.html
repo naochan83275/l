@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title id="title">redirecting...</title>
+    <meta chearset="UTF-8">
+    <script src="link.js"></script>
+    <meta name="robots" content="noindex,nofollow">
+  </head>
+  <body>
+    <noscript>
+      <h1>
+        javascriptが必要です
+      </h1>
+      <p>
+        このWebサイトの動作には、javascriptが必要です。
+        <br>
+        javascriptを有効にしてアクセスをお願いいたします。
+      </p>
+      <small>&copy; 2024 @naochan83275</small>
+    </noscript>
+    <div style="display: none;" id="n"></div>
+    <script>
+      function setid(){
+        document.getElementById('linkjs').innerHTML = document.getElementById('linkjs').innerHTML.replace('p', document.getElementById('n').innerHTML);
+      }
+    </script>
+    <script type="module">
+      function go(){
+        import link from "./link.json" assert { type: "json" };
+        var _url = window.location.href;
+        if ( ~_url.indexOf('https://naochan83275.github.io/l/')){
+          var linkid = _url.replace('https://naochan83275.github.io/l/', '');
+          document.getElementById('n').innerHTML = linkid;
+          setid()
+          var link = link.data.p;
+          window.location.href = link;
+        }else{
+          alert('IDが間違っています。')
+          window.location.href = 'https://naochan83275.github.io';
+        }
+      }
+      go()
+    </script>
+  </body>
+</html>
